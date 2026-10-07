@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --color-kerala-cream: #FDFBF7;
+  --color-kerala-gold: #D4AF37;
+  --color-kerala-gold-light: #F4EAD3;
+  --color-kerala-teak: #3E2723;
+  --color-kerala-green: #2E7D32;
+  --font-sans: "Noto Sans Malayalam", "Manjari", sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-kerala-cream);
+    color: var(--color-kerala-teak);
+    font-family: var(--font-sans);
+  }
+}
+
+/* Custom Scrollbar for a more app-like feel */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-kerala-gold);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-kerala-teak);
+}
+
+/* High Contrast Mode Class */
+.high-contrast {
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: bold;
+}
+.high-contrast .bg-kerala-cream {
+  background-color: #ffffff;
+  border: 2px solid #000000;
+}
+.high-contrast .text-kerala-teak {
+  color: #000000;
+}
+.high-contrast .bg-kerala-green {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
